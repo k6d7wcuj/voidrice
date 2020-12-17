@@ -41,3 +41,17 @@ alias \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc" \
 	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
 	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+
+alias \
+    dc="docker-compose" \
+    dcd="dc down" \
+    dcp="dc pull" \
+    dcu="dc up"
+
+con () {
+    sudo chown -R alex:docker "${1}"
+}
+
+dx () {
+    docker exec -ti ${1} bash || docker exec -ti ${1} sh
+}
